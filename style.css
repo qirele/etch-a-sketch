@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(16, 30px);
+  gap: 1px;
+  border-collapse: collapse;
+}
+
+.item {
+  border: 1px solid black; 
+  height: 30px;
+  width: 30px;
+}
