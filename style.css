@@ -9,17 +9,45 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: black;
 }
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(16, 30px);
-  gap: 1px;
-  border-collapse: collapse;
+  max-width: 800px;
+  outline: 1px solid white;
 }
 
 .item {
-  border: 1px solid black; 
-  height: 30px;
-  width: 30px;
+  transition: all .2s;
+  overflow: visible;
+  background-color: rgb(255, 223, 223);
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  padding: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+button:hover, button:active, button:focus {
+  background-color: brown;
+}
+
+h1 {
+  position: absolute;
+  color: white;
+  top: 0;
+  text-transform: uppercase;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
