@@ -24,11 +24,17 @@ body {
   background-color: rgb(255, 223, 223);
 }
 
-button {
+
+.controls {
   position: absolute;
-  transform: translateY(-50%);
   left: 0;
+}
+
+button {
+  display: block;
+  width: 100%;
   padding: 20px;
+  margin: 10px 0;
   background-color: white;
   border: none;
   border-radius: 20px;
@@ -37,19 +43,21 @@ button {
   text-transform: uppercase;
   font-family: monospace;
   cursor: pointer;
+  box-shadow: 0px 0px 5px rgb(196, 196, 196);
+  transition: all .2s;
 }
 
-.custom {
-  top: 50%;
+button:hover {
+  background-color: rgb(255, 223, 223);
 }
 
-.reset {
-  top: 40%;
+button:active {
+  background-color: rgb(54, 54, 54);
+  color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
-button:hover, button:active, button:focus {
-  background-color: brown;
-}
 
 h1 {
   position: absolute;
