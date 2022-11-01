@@ -1,7 +1,10 @@
 const wrapper = document.querySelector(".wrapper");
-const btn = document.querySelector("button");
+const customBtn = document.querySelector(".custom");
+const resetBtn = document.querySelector(".reset");
 
-btn.addEventListener("click", () => {
+let currentSize = 16;
+
+customBtn.addEventListener("click", () => {
   let num;
 
   num = prompt("Gimme a number less than 100", "");
@@ -20,21 +23,30 @@ btn.addEventListener("click", () => {
     num = 100;
   }
 
+  currentSize = num;
   while (wrapper.firstChild) wrapper.removeChild(wrapper.lastChild);
   createGrid(num);
 });
 
-createGrid(16);
+
+resetBtn.addEventListener("click", () => {
+  while (wrapper.firstChild) wrapper.removeChild(wrapper.lastChild);
+  createGrid(currentSize);
+});
+
+
+createGrid(currentSize);
 
 function createGrid(num) {
+  wrapper.style.gridTemplateColumns = `repeat(${num}, ${800 / num}px)`;
+  wrapper.style.gridTemplateRows = `repeat(${num}, ${800 / num}px)`;
+
   for (let i = 0; i < num * num; i++) {
     const div = document.createElement("div");
     div.classList.add("item");
-    wrapper.appendChild(div);
-
-    wrapper.style.gridTemplateColumns = `repeat(${num}, ${800 / num}px)`;
-    wrapper.style.gridTemplateRows = `repeat(${num}, ${800 / num}px)`;
     div.addEventListener("mouseover", changeColor);
+
+    wrapper.appendChild(div);
   }
 }
 

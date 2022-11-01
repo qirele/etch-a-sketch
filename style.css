@@ -26,7 +26,6 @@ body {
 
 button {
   position: absolute;
-  top: 50%;
   transform: translateY(-50%);
   left: 0;
   padding: 20px;
@@ -38,6 +37,14 @@ button {
   text-transform: uppercase;
   font-family: monospace;
   cursor: pointer;
+}
+
+.custom {
+  top: 50%;
+}
+
+.reset {
+  top: 40%;
 }
 
 button:hover, button:active, button:focus {
